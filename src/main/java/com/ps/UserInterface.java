@@ -81,8 +81,17 @@ public class UserInterface
 
         }while(command != 0);
     }
+
+    private static void displayVehicles(List<Vehicle>vehicles)
+    {
+        for (Vehicle vehicle : vehicles){
+            System.out.println(vehicle);
+        }
+
+    }
+
     public static void processGetByPriceRequest(){
-        System.out.println("Imma hit you later, my intellaJ just expired :'(");
+        System.out.println("Imma hit you later, my intellaJ version swapped");
 
     }
 
@@ -107,6 +116,13 @@ public class UserInterface
     }
 
     public static void processGetAllVehiclesRequest(){
+
+        //dealership.getAllVehicles();
+        System.out.println("Displaying all vehicles");
+        //System.out.println(dealership.getAllVehicles());
+
+        List<Vehicle> vehicles = dealership.getAllVehicles();
+        displayVehicles(vehicles);
 
     }
 

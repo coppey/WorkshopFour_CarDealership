@@ -1,11 +1,9 @@
 package com.ps;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dealership
-{
+public class Dealership {
     private String name;
     private String address;
     private String phone;
@@ -22,39 +20,39 @@ public class Dealership
         this.inventory = new ArrayList<>();
     }
 
-    public List<Vehicle> getVehiclesByPrice(double min, double max){
+    public List<Vehicle> getVehiclesByPrice(double min, double max) {
         return null;
     }
 
-    public List<Vehicle> getVehiclesByMakeModel(String make, String model){
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
         return null;
     }
 
-    public List<Vehicle> getVehiclesByYear(int year){
+    public List<Vehicle> getVehiclesByYear(int year) {
         return null;
     }
 
-    public List<Vehicle> getVehiclesByColor(String color){
+    public List<Vehicle> getVehiclesByColor(String color) {
         return null;
     }
 
-    public List<Vehicle> getVehiclesByMileage(int odometer){
+    public List<Vehicle> getVehiclesByMileage(int odometer) {
         return null;
     }
 
-    public List<Vehicle> getVehiclesByType(String vehicleType){
+    public List<Vehicle> getVehiclesByType(String vehicleType) {
         return null;
     }
 
-    public List<Vehicle> getAllVehicles(){
+    public List<Vehicle> getAllVehicles() {
         return this.inventory;
     }
 
-    public void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle) {
         this.inventory.add(vehicle);
     }
 
-    public void removeVehicle(Vehicle vehicle){
+    public void removeVehicle(Vehicle vehicle) {
         this.inventory.remove(vehicle);
     }
 
@@ -81,8 +79,5 @@ public class Dealership
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-
-
 
 }
