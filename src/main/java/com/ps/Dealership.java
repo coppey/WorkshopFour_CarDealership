@@ -50,11 +50,11 @@ public class Dealership
         return this.inventory;
     }
 
-    public void addVehicles(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle){
         this.inventory.add(vehicle);
     }
 
-    public void removeVehicles(Vehicle vehicle){
+    public void removeVehicle(Vehicle vehicle){
         this.inventory.remove(vehicle);
     }
 
