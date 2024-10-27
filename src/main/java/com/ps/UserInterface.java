@@ -87,32 +87,68 @@ public class UserInterface
         for (Vehicle vehicle : vehicles){
             System.out.println(vehicle);
         }
-
     }
 
     public static void processGetByPriceRequest(){
-        System.out.println("Imma hit you later, my intellaJ version swapped");
+        System.out.println("Please Enter your Price Range\n" +
+                "Enter minimum price: ");
+        double minPrice = inputScanner.nextDouble();
 
+        System.out.print("\nEnter maximum price: ");
+        double maxPrice = inputScanner.nextDouble();
+
+        List<Vehicle> vehiclesByPrice = dealership.getVehiclesByPrice(minPrice, maxPrice);
+        displayVehicles(vehiclesByPrice);
     }
 
     public static void processGetByMakeModelRequest(){
+        System.out.println("Please Enter the Make and Model of your desired Vehicle\n" +
+                "Enter Make of Vehicle: ");
+        String make = inputScanner.nextLine();
 
+        System.out.print("\nEnter the Model of Vehicle: ");
+        String model = inputScanner.nextLine();
+
+        List<Vehicle> vehiclesByMakeModel = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(vehiclesByMakeModel);
     }
 
     public static void processGetByYearRequest(){
+        System.out.println("Please Enter your Desired Year of Production\n" +
+                "Year: ");
+        int year = inputScanner.nextInt();
 
+        List<Vehicle> vehiclesByYear = dealership.getVehiclesByYear(year);
+        displayVehicles(vehiclesByYear);
     }
 
     public static void processGetByColorRequest(){
+        System.out.println("Please Enter the Color of your desired Vehicle\n" +
+                "Color: ");
+        String color = inputScanner.nextLine();
+
+        List<Vehicle> vehiclesByColor = dealership.getVehiclesByColor(color);
+        displayVehicles(vehiclesByColor);
 
     }
 
     public static void processGetByMileageRequest(){
+        System.out.println("Please Enter how many Miles you want on your vehicle\n" +
+                "Odometer Stats(In Miles): ");
+        int odometer = inputScanner.nextInt();
 
+        List<Vehicle> vehiclesByMileage = dealership.getVehiclesByMileage(odometer);
+        displayVehicles(vehiclesByMileage);
     }
 
     public static void processGetByVehicleTypeRequest(){
+        System.out.println("Please Enter the Type of Vehicle you desire\n" +
+                "Types include: SUV, Van, Truck, Sedan, Coupe, Sports Coupe, Unconventional\n" +
+                "Desired Type: ");
+        String type = inputScanner.nextLine();
 
+        List<Vehicle> vehiclesByType = dealership.getVehiclesByType(type);
+        displayVehicles(vehiclesByType);
     }
 
     public static void processGetAllVehiclesRequest(){
