@@ -158,7 +158,6 @@ public class UserInterface
 
         List<Vehicle> vehicles = dealership.getAllVehicles();
         displayVehicles(vehicles);
-
     }
 
     public static void processAddVehicleRequest(){
@@ -191,10 +190,14 @@ public class UserInterface
                 "Vin#: ");
         int vin = inputScanner.nextInt();
 
-        //dealership.removeVehicle(vin);
-        List<Vehicle> Vin = dealership.getAllVehicles();
-        dealership.removeVehicle(Vin);
+        Vehicle vehicleToRemove = null;
 
+        for(Vehicle vehicle : dealership.getAllVehicles()){
+            if (vehicle.getVin() == vin){
+                vehicleToRemove = vehicle;
+                break;
+            }
+        }
     }
 
 

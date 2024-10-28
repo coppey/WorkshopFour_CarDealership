@@ -26,8 +26,6 @@ public class Dealership {
             if(vehicle.getPrice() >= min && vehicle.getPrice() <= max)
             {
                 pricedVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return pricedVehicles;
     }
@@ -38,8 +36,6 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model))
             {
                 makeModelVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return makeModelVehicles;
     }
@@ -50,8 +46,6 @@ public class Dealership {
             if(vehicle.getYear() == year)
             {
                 yearVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return yearVehicles;
     }
@@ -62,8 +56,6 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(color))
             {
                 coloredVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return coloredVehicles;
     }
@@ -74,8 +66,6 @@ public class Dealership {
             if(vehicle.getYear() == odometer)
             {
                 mileVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return mileVehicles;
     }
@@ -86,8 +76,6 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(vehicleType))
             {
                 typeVehicles.add(vehicle);
-            }else{
-                System.out.println("invalid option");
             }
         return typeVehicles;
     }
@@ -98,12 +86,12 @@ public class Dealership {
 
     public void addVehicle(Vehicle vehicle) {
         this.inventory.add(vehicle);
-        DealershipFileManager.saveDealership();
+        DealershipFileManager.saveDealership(this);
     }
 
     public void removeVehicle(Vehicle vehicle) {
         this.inventory.remove(vehicle);
-        DealershipFileManager.saveDealership();
+        DealershipFileManager.saveDealership(this);
     }
 
     public String getAddress() {
