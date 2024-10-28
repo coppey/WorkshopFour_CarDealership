@@ -129,7 +129,6 @@ public class UserInterface
 
         List<Vehicle> vehiclesByColor = dealership.getVehiclesByColor(color);
         displayVehicles(vehiclesByColor);
-
     }
 
     public static void processGetByMileageRequest(){
@@ -163,10 +162,38 @@ public class UserInterface
     }
 
     public static void processAddVehicleRequest(){
+        System.out.print("Please Enter the Following information for the Vehicle you'd like to add\n" +
+                "vin: ");
+        int vin = inputScanner.nextInt();
+        System.out.print("\nColor: ");
+        String color = inputScanner.nextLine();
+        System.out.print("\nYear: ");
+        int year = inputScanner.nextInt();
+        System.out.print("\nMake: ");
+        String make = inputScanner.nextLine();
+        System.out.print("\nModel: ");
+        String model = inputScanner.nextLine();
+        System.out.print("\nType: ");
+        String type = inputScanner.nextLine();
+        System.out.print("\nMileage: ");
+        int odometer = inputScanner.nextInt();
+        System.out.print("\nPrice: ");
+        double price = inputScanner.nextDouble();
 
+        Vehicle car = new Vehicle(vin, year, color, make, model, type, odometer, price);
+        dealership.addVehicle(car);
+
+        System.out.println("Vehicle Added to Dealership");
     }
 
     public static void processRemoveVehicleRequest(){
+        System.out.println("Please enter the vin# of the Vehicle you'd like to remove\n" +
+                "Vin#: ");
+        int vin = inputScanner.nextInt();
+
+        //dealership.removeVehicle(vin);
+        List<Vehicle> Vin = dealership.getAllVehicles();
+        dealership.removeVehicle(Vin);
 
     }
 

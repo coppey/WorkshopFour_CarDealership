@@ -21,13 +21,15 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByPrice(double min, double max) {
-        List<Vehicle> pricedVehicle = new ArrayList<>();
+        List<Vehicle> pricedVehicles = new ArrayList<>();
         for (Vehicle vehicle : inventory)
             if(vehicle.getPrice() >= min && vehicle.getPrice() <= max)
             {
-                pricedVehicle.add(vehicle);
+                pricedVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
-        return pricedVehicle;
+        return pricedVehicles;
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
@@ -36,18 +38,22 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model))
             {
                 makeModelVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
         return makeModelVehicles;
     }
 
     public List<Vehicle> getVehiclesByYear(int year) {
-        List<Vehicle> vehicles = new ArrayList<>();
+        List<Vehicle> yearVehicles = new ArrayList<>();
         for (Vehicle vehicle : inventory)
             if(vehicle.getYear() == year)
             {
-                vehicles.add(vehicle);
+                yearVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
-        return vehicles;
+        return yearVehicles;
     }
 
     public List<Vehicle> getVehiclesByColor(String color) {
@@ -56,6 +62,8 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(color))
             {
                 coloredVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
         return coloredVehicles;
     }
@@ -66,6 +74,8 @@ public class Dealership {
             if(vehicle.getYear() == odometer)
             {
                 mileVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
         return mileVehicles;
     }
@@ -76,6 +86,8 @@ public class Dealership {
             if(vehicle.getMake().equalsIgnoreCase(vehicleType))
             {
                 typeVehicles.add(vehicle);
+            }else{
+                System.out.println("invalid option");
             }
         return typeVehicles;
     }
@@ -86,10 +98,12 @@ public class Dealership {
 
     public void addVehicle(Vehicle vehicle) {
         this.inventory.add(vehicle);
+        DealershipFileManager.saveDealership();
     }
 
     public void removeVehicle(Vehicle vehicle) {
         this.inventory.remove(vehicle);
+        DealershipFileManager.saveDealership();
     }
 
     public String getAddress() {
